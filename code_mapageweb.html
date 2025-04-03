@@ -1,0 +1,135 @@
+// pages/index.jsx
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail, Phone, Linkedin, Instagram } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="max-w-4xl mx-auto p-6 space-y-12">
+      {/* Héros */}
+      <section className="text-center space-y-4">
+        <h1 className="text-4xl font-bold">Sébastien Bondoux</h1>
+        <p className="text-xl">Géomaticien – Urbaniste Freelance</p>
+        <p className="text-muted-foreground">Cartographier, modéliser, comprendre et valoriser les territoires</p>
+        <Button className="mt-4">Me contacter</Button>
+      </section>
+
+      {/* Qui suis-je */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Qui suis-je ?</h2>
+        <p>
+          Professionnel de la géomatique et de l’urbanisme, j’accompagne depuis plus de 10 ans les acteurs publics et les bureaux
+          d’études dans la structuration, la lecture et la valorisation de leurs données territoriales.
+        </p>
+      </section>
+
+      {/* Services */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Mes services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            "SIG & géomatique",
+            "Urbanisme numérique (PLU, GPU, CNIG)",
+            "Drone & photogrammétrie",
+            "Analyse paysagère et écologique",
+            "Cartographie interactive",
+            "IA & automatisation spatiale"
+          ].map((service) => (
+            <Card key={service}>
+              <CardContent className="p-4 font-medium">{service}</CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Projets */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Projets réalisés</h2>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>Publication de PLU de communes rurales sur le Géoportail de l’Urbanisme</li>
+          <li>Survol drone + modèle 3D d’un secteur urbain en renouvellement</li>
+          <li>Analyse de trames vertes via classification IA + cartographie interactive</li>
+        </ul>
+      </section>
+
+      {/* Modèles 3D */}
+      <section className="space-y-8">
+        <h2 className="text-2xl font-semibold">Modèles 3D interactifs</h2>
+
+        <div className="aspect-video">
+          <iframe
+            title="Modèle Sketchfab 1"
+            width="100%"
+            height="480"
+            src="https://sketchfab.com/models/6bb43b2a7e8b48fd832cf6e3d7f57a0e/embed"
+            frameBorder="0"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            allowFullScreen
+            mozAllowFullScreen="true"
+            webkitAllowFullScreen="true"
+          ></iframe>
+        </div>
+
+        <div className="aspect-video">
+          <iframe
+            title="Modèle Sketchfab 2"
+            width="100%"
+            height="480"
+            src="https://sketchfab.com/models/16001fc8f4bc4f4ca78b1b7ed21680d2/embed"
+            frameBorder="0"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            allowFullScreen
+            mozAllowFullScreen="true"
+            webkitAllowFullScreen="true"
+          ></iframe>
+        </div>
+      </section>
+
+      {/* Vidéo */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Vidéo drone – Paris vue du ciel</h2>
+        <div className="aspect-video">
+          <iframe
+            width="100%"
+            height="480"
+            src="https://www.youtube.com/embed/REDVbTQxMXo?si=V6Us4VG8WlP-gses"
+            title="Paris drone FPV"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </section>
+
+      {/* Instagram */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Suivre mon travail sur Instagram</h2>
+        <div className="flex items-center gap-2">
+          <Instagram className="w-5 h-5" />
+          <a
+            href="https://www.instagram.com/tonprofilinstagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            @tonprofilinstagram
+          </a>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="space-y-2">
+        <h2 className="text-2xl font-semibold">Contact</h2>
+        <div className="flex items-center gap-2">
+          <Mail className="w-5 h-5" /> <span>sebastien.bondoux@email.com</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Phone className="w-5 h-5" /> <span>06 00 00 00 00</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Linkedin className="w-5 h-5" /> <a href="https://www.linkedin.com/in/tonprofil" className="underline">LinkedIn</a>
+        </div>
+      </section>
+    </div>
+  );
+}
